@@ -29,6 +29,18 @@ RUN curl -sLo /jenkins/plugins/git-client.hpi \
     https://updates.jenkins-ci.org/latest/git-client.hpi
 RUN curl -sLo /jenkins/plugins/scm-api.hpi \
     https://updates.jenkins-ci.org/latest/scm-api.hpi
+RUN curl -sLo /jenkins/plugins/build-flow-plugin.hpi \
+    https://updates.jenkins-ci.org/latest/build-flow-plugin.hpi
+RUN curl -sLo /jenkins/plugins/buildgraph-view.hpi \
+    https://updates.jenkins-ci.org/latest/buildgraph-view.hpi
+RUN curl -sLo /jenkins/plugins/parameterized-trigger.hpi \
+    https://updates.jenkins-ci.org/latest/parameterized-trigger.hpi
+RUN curl -sLo /jenkins/plugins/job-dsl.hpi \
+    https://updates.jenkins-ci.org/latest/job-dsl.hpi
+RUN curl -sLo /jenkins/plugins/cloudbees-folder.hpi \
+    https://updates.jenkins-ci.org/latest/cloudbees-folder.hpi
+RUN curl -sLo /jenkins/plugins/credentials.hpi \
+    https://updates.jenkins-ci.org/latest/credentials.hpi
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
