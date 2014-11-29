@@ -11,6 +11,7 @@ ENV	DEBIAN_FRONTEND	noninteractive
 # set sane locale
 RUN	locale-gen en_US.UTF-8
 RUN mkdir -p /jenkins/plugins
+RUN apt-get install -y git
 
 ENV JENKINS_VERSION 1.591
 RUN curl -sLo /opt/jenkins.war \
