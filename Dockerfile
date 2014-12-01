@@ -41,6 +41,8 @@ RUN curl -sLo /jenkins/plugins/credentials.hpi \
     https://updates.jenkins-ci.org/latest/credentials.hpi
 RUN curl -sLo /jenkins/plugins/jobolizer.hpi \
     http://dl.bintray.com/webdizz/maven/jobolizer.hpi
+RUN curl -sLo /jenkins/plugins/gradle.hpi \
+    http://updates.jenkins-ci.org/latest/gradle.hpi
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
