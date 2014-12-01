@@ -35,12 +35,12 @@ RUN curl -sLo /jenkins/plugins/buildgraph-view.hpi \
     https://updates.jenkins-ci.org/latest/buildgraph-view.hpi
 RUN curl -sLo /jenkins/plugins/parameterized-trigger.hpi \
     https://updates.jenkins-ci.org/latest/parameterized-trigger.hpi
-RUN curl -sLo /jenkins/plugins/job-dsl.hpi \
-    https://updates.jenkins-ci.org/latest/job-dsl.hpi
 RUN curl -sLo /jenkins/plugins/cloudbees-folder.hpi \
     https://updates.jenkins-ci.org/latest/cloudbees-folder.hpi
 RUN curl -sLo /jenkins/plugins/credentials.hpi \
     https://updates.jenkins-ci.org/latest/credentials.hpi
+RUN curl -sLo /jenkins/plugins/jobolizer.hpi \
+    http://dl.bintray.com/webdizz/maven/jobolizer.hpi
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
