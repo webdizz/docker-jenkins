@@ -50,6 +50,8 @@ RUN curl -sLo /jenkins/plugins/credentials.hpi \
     https://updates.jenkins-ci.org/latest/credentials.hpi
 RUN curl -sLo /jenkins/plugins/gradle.hpi \
     http://updates.jenkins-ci.org/latest/gradle.hpi
+RUN curl -sLo /jenkins/plugins/greenballs.hpi \
+    http://updates.jenkins-ci.org/latest/greenballs.hpi
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
