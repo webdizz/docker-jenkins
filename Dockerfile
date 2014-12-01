@@ -11,9 +11,16 @@ ENV	DEBIAN_FRONTEND	noninteractive
 # set sane locale
 RUN	locale-gen en_US.UTF-8
 RUN mkdir -p /jenkins/plugins
-RUN apt-get install -y git
+RUN apt-get install -y git \
+    && apt-get clean
 
-ENV JENKINS_VERSION 1.591
+RUN apt-get install software-properties-common \
+    && apt-add-repository ppa:ansible/ansible \
+    && apt-get update \
+    && apt-get install ansible \
+    && apt-get clean
+
+ENV JENKINS_VERSION 1.592
 RUN curl -sLo /opt/jenkins.war \
     http://mirrors.jenkins-ci.org/war/${JENKINS_VERSION}/jenkins.war
 RUN chmod 644 /opt/jenkins.war
