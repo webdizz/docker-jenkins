@@ -17,7 +17,7 @@ RUN apt-get install -y git \
 RUN apt-get install software-properties-common \
     && apt-add-repository ppa:ansible/ansible \
     && apt-get update \
-    && apt-get install ansible \
+    && apt-get install -y ansible \
     && apt-get clean
 
 ENV JENKINS_VERSION 1.592
